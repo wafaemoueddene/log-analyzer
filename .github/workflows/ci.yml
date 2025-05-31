@@ -1,0 +1,30 @@
+name: Python CI
+
+on:
+  push:
+    branches:
+      - dev
+  pull_request:
+    branches:
+      - dev
+
+jobs:
+  test-python-script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name:  Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name:  Install required dependencies manually
+      run: |
+        python -m pip install --upgrade pip
+        pip install colorama
+
+    - name: Run log-analyzer.py script
+      run: python log-analyzer.py

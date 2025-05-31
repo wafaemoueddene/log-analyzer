@@ -1,0 +1,5 @@
+ERROR - Disk not found
+INFO - Starting analysis
+WARNING - Low memory
+ERROR - Timeout reached
+INFO - Process completed

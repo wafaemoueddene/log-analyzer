@@ -1,6 +1,6 @@
 ﻿# log-analyzer
 
-Auteur : Wafae MOUEDDENE
+Auteur : Wafae MOUEDDENE   Master ISI
 Ce script lit un fichier log.txt et extrait le nombre de messages de type ERROR, WARNING et INFO.
 
 ## Instructions
