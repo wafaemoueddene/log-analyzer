@@ -26,3 +26,17 @@ with open('rapport.txt', 'w') as report:
         report.write(f"{level}: {count.get(level, 0)}\n")
 
 print(Fore.MAGENTA + "\n Rapport généré dans 'rapport.txt'")
+
+error_count = 0
+with open('rapport.txt', 'r') as f:
+    content = f.read()
+    error_count = content.count('ERROR')
+
+print(f"Nombre d'erreurs détectées: {error_count}")
+
+if error_count > 5:
+    print("ÉCHEC: Plus de 5 erreurs détectées!")
+    exit(1)  # Le build échouera
+else:
+    print("SUCCÈS: Nombre d'erreurs acceptable")
+    exit(0)
