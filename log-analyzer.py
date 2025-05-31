@@ -1,18 +1,14 @@
 from collections import Counter
 from colorama import init, Fore
 
-# Initialiser colorama
 init(autoreset=True)
 
-# Lire le fichier log
 with open('log.txt', 'r') as file:
     lines = file.readlines()
 
-# Compter les types de messages (ERROR, WARNING, INFO)
 types = [line.split(' - ')[0].strip() for line in lines]
 count = Counter(types)
 
-# Affichage coloré dans le terminal
 print(Fore.CYAN + "\n📊 Résumé de l'analyse du fichier log.txt :\n")
 for level in ['ERROR', 'WARNING', 'INFO']:
     couleur = {
